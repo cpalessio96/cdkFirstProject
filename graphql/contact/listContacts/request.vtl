@@ -1,0 +1,13 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "Query",
+    "query" : {
+        "expression" : "#pk = :contact",
+        "expressionNames" : {
+            "#pk" : "pk"
+        },
+        "expressionValues" : {
+            ":contact" : $util.dynamodb.toDynamoDBJson("contact")
+        }
+    }
+}

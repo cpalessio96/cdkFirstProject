@@ -1,0 +1,20 @@
+type Contact {
+  sk: String!
+  number: String!
+  name: String!
+}
+type Query {
+  listContacts: [ Contact ]
+  getContact(input: GetContactInput!): Contact
+}
+
+input GetContactInput {
+  id: String!
+}
+input ContactInput {
+  number: String!
+  name: String!
+}
+type Mutation {
+  addContact(input: ContactInput!): Contact
+}

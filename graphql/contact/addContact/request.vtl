@@ -1,0 +1,12 @@
+{
+    "version" : "2018-05-29",
+    "operation" : "PutItem",
+    "key": {
+        "pk" : $util.dynamodb.toDynamoDBJson("contact"),
+        "sk" : $util.dynamodb.toDynamoDBJson($util.autoId())
+    },
+    "attributeValues" : {
+        "name" : $util.dynamodb.toDynamoDBJson($ctx.args.input.name),
+        "number" : $util.dynamodb.toDynamoDBJson($ctx.args.input.number),
+    },
+}
