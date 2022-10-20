@@ -18,9 +18,10 @@ export class DynamoDBIntegration extends Construct {
           "application/json": JSON.stringify({
               TableName: tableName,
               Item: {
-                pk: {'S': "orders"},
-                sk: {'S': "$util.autoId()"},
-                quantity: {'N': "$input.path('$.quantity')"}
+                pk: {"S": "orders"},
+                sk: {"S": "$context.requestId"},
+                quantity: {"N": "$input.path('$.quantity')"},
+                product: {"BOOL": "true" }
               }
             })
         },
